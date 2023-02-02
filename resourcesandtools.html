@@ -111,25 +111,25 @@
            async function fetchData() {
              const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
              const query = `
-    query ResourcesAndTools {
-      posts(where: {categoryName: "Resources & Tools"}) {
-        edges {
-          node {
-            title
-            content
-            faq {
-                faqAnswer
-                faqTitle
-            }
-            featuredImage {
-              node {
-                mediaItemUrl
-              }
-            }
-          }
-        }
-      }
-    }
+                    query ResourcesAndTools {
+                      posts(where: {categoryName: "Resources & Tools"}) {
+                        edges {
+                          node {
+                            title
+                            content
+                            faq {
+                                faqAnswer
+                                faqTitle
+                            }
+                            featuredImage {
+                              node {
+                                mediaItemUrl
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                `;
              const res = await fetch(endpoint, {
                  method: "POST",

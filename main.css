@@ -226,6 +226,22 @@ body {
   align-items: center;
   gap: 25px;
 }
+.kw-card_event {
+  display: grid;
+  grid-template-columns: 44px auto;
+  grid-gap: 25px;
+  background: #fff;
+  margin: 10px 0px 10px 0;
+  padding: 12px 20px;
+  align-items: center;
+  border: 1px solid #E3E3E3;
+}
+.kw-card_event h3 {
+  margin: 0.5rem 0;
+}
+.kw-card_event p {
+  margin: 0.5rem 0;
+}
 .kw-card:hover {
   -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
@@ -275,68 +291,4 @@ p {
   font-size: 16px;
   line-height: 24px;
   color: #424242;
-}
-
-/*alot of these styles are useless and only for prism*/
-.accordion-n {
-  padding: 0 0 0 0rem;
-  display: block;
-  margin: 0 0 1rem 0;
-}
-
-.accordion-n dt {
-  display: block;
-  width: 100%;
-  padding: 0;
-}
-
-.accordion-n dt a::before,
-.accordion-n dt a::after {
-  content: "";
-  position: absolute;
-  left: 0.5rem;
-  top: calc(50% - 0.5rem);
-  height: 1rem;
-  width: 4px;
-  background: var(--green);
-  transition: all 0.25s ease;
-  border-radius: 2px;
-}
-
-.accordion-n dt a::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.accordion-n dt a:hover::after {
-  background: var(--green);
-}
-
-.accordion-n dt.open a::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.accordion-n dt.open a::after {
-  -webkit-transform: rotate(140deg);
-          transform: rotate(140deg);
-}
-
-.accordion-n dt a {
-  display: block;
-  color: initial;
-  text-decoration: none;
-  padding: 0rem 0rem 0rem 2rem;
-  position: relative;
-  margin: 0;
-}
-
-.accordion-n dd {
-  border-top: 0;
-  padding: 1rem 1rem 1rem 2rem;
-  margin: 0;
-}
-
-.accordion-n dd p {
-  margin: 0;
 }

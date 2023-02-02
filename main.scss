@@ -143,11 +143,12 @@ body {
     }
 
     &-mainBody {
-        &_cardGrid{
-            display:grid;
+        &_cardGrid {
+            display: grid;
             grid-template-columns: 1fr 1fr;
-            column-gap:50px;
+            column-gap: 50px;
         }
+
         &_content {
             padding: 30px 50px;
         }
@@ -182,11 +183,11 @@ body {
 
     &-interiorBody {
         background: #E0E0E0;
-        display:grid;
+        display: grid;
         grid-template-columns: 1fr 1.4fr;
-        grid-gap:0px;
-        
-        &_nav{
+        grid-gap: 0px;
+
+        &_nav {
             padding: 50px 50px 0 50px;
         }
     }
@@ -194,14 +195,14 @@ body {
     &-announcements {
         padding: 4.5rem 5rem;
         background-color: #f9f9f9;
-        
+
         @media all and (max-width: 1000px) {
-            display:none;
-            position:absolute;
-            top:0;
-            left:0;
-            height:100%;
-            width:100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
         }
 
         h3 {
@@ -232,11 +233,11 @@ body {
         &_heroImage {
             position: relative;
             margin-bottom: 20px;
-            
-            img{
-                width:100%;
-                height:100%;
-                max-height:275px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                max-height: 275px;
                 object-fit: cover;
             }
 
@@ -247,9 +248,9 @@ body {
                 color: #fff;
                 font-weight: 700;
                 font-size: 21px;
-background: rgba(0,0,0,.5);
-padding:8px 15px;
-border-radius:2px;
+                background: rgba(0, 0, 0, .5);
+                padding: 8px 15px;
+                border-radius: 2px;
             }
         }
     }
@@ -264,6 +265,25 @@ border-radius:2px;
         margin: 10px 0px 10px 0;
         align-items: center;
         gap: 25px;
+
+        &_event {
+            display: grid;
+            grid-template-columns: 44px auto;
+            grid-gap: 25px;
+            background: #fff;
+            margin: 10px 0px 10px 0;
+            padding: 12px 20px;
+            align-items: center;
+            border: 1px solid #E3E3E3;
+
+            h3 {
+                margin: 0.5rem 0;
+            }
+
+            p {
+                margin: 0.5rem 0;
+            }
+        }
 
         &:hover {
             filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
@@ -322,63 +342,3 @@ p {
     color: #424242;
 }
 
-/*alot of these styles are useless and only for prism*/
-.accordion-n {
-    padding: 0 0 0 0rem;
-    display: block;
-    margin: 0 0 1rem 0;
-}
-
-.accordion-n dt {
-    display: block;
-    width: 100%;
-    padding: 0;
-}
-
-.accordion-n dt a::before,
-.accordion-n dt a::after {
-    content: '';
-    position: absolute;
-    left: .5rem;
-    top: calc(50% - .5rem);
-    height: 1rem;
-    width: 4px;
-    background: var(--green);
-    transition: all .25s ease;
-    border-radius: 2px;
-}
-
-.accordion-n dt a::after {
-    transform: rotate(90deg);
-}
-
-.accordion-n dt a:hover::after {
-    background: var(--green);
-}
-
-.accordion-n dt.open a::before {
-    transform: rotate(45deg);
-}
-
-.accordion-n dt.open a::after {
-    transform: rotate(140deg);
-}
-
-.accordion-n dt a {
-    display: block;
-    color: initial;
-    text-decoration: none;
-    padding: 0rem 0rem 0rem 2rem;
-    position: relative;
-    margin: 0;
-}
-
-.accordion-n dd {
-    border-top: 0;
-    padding: 1rem 1rem 1rem 2rem;
-    margin: 0;
-}
-
-.accordion-n dd p {
-    margin: 0;
-}
