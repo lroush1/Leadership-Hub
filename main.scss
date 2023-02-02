@@ -1,0 +1,384 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.kw {
+    &-btn {
+        padding: 5px 20px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 27px;
+        text-align: center;
+
+        &_group {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        &_primary {
+            background: #CE011F;
+            border-radius: 1px;
+            color: #fff;
+        }
+
+        &_secondary {
+            border: 1px solid #ADADAD;
+            color: #ADADAD;
+            border-radius: 1px;
+        }
+    }
+
+    &-sidebar {
+        background-color: #f5f5f5;
+        padding: 4rem 0px 4rem 0px;
+
+        @media all and (max-width: 1000px) {
+            display: none;
+        }
+
+        .kw {
+            &-nav {
+                width: 100%;
+                margin: 5rem 0 0 0;
+
+
+                ul {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    transition: 0.3s;
+                }
+
+                li:not(.active) {
+                    list-style: none;
+                    width: 100%;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 21px;
+                    padding: 10px 0 10px 20px;
+                    transition: 0.3s;
+
+                    a {
+                        text-decoration: none;
+                        color: #000000;
+                        transition: 0.3s;
+                    }
+
+                    &:hover {
+                        font-weight: 500;
+                        transition: 0.3s;
+                    }
+                }
+
+                .active {
+                    background: #ce012009;
+                    font-style: normal;
+                    font-weight: 700;
+                    list-style: none;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: #ce011f;
+                    position: relative;
+                    padding: 12px 0 12px 20px;
+                    transition: 0.3s;
+
+                    a {
+                        text-decoration: none;
+                        color: #ce011f;
+                        transition: 0.3s;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 4px;
+                        height: 100%;
+                        background: red;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            &-profile {
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: 60px auto;
+                align-items: center;
+                margin: 0 2rem;
+
+                img {
+                    border-radius: 50rem;
+                }
+
+                h4 {
+                    margin: 0;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #363636;
+                }
+
+                h2 {
+                    margin: 0;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 21px;
+                    line-height: 25px;
+                    color: #363636;
+                }
+            }
+        }
+    }
+
+    &-mainBody {
+        &_cardGrid{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap:50px;
+        }
+        &_content {
+            padding: 30px 50px;
+        }
+
+        &_hero {
+            background-color: #000000;
+            padding: 3.5rem 5.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            align-items: center;
+
+            &_heroContent {
+                p {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: #ffffff;
+                }
+
+                a {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 27px;
+                    text-align: center;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    &-interiorBody {
+        background: #E0E0E0;
+        display:grid;
+        grid-template-columns: 1fr 1.4fr;
+        grid-gap:0px;
+        
+        &_nav{
+            padding: 50px 50px 0 50px;
+        }
+    }
+
+    &-announcements {
+        padding: 4.5rem 5rem;
+        background-color: #f9f9f9;
+        
+        @media all and (max-width: 1000px) {
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+        }
+
+        h3 {
+            font-weight: 400;
+        }
+
+        a {
+            color: #CE011F;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+
+        &_group {
+            border-bottom: 1px solid #D7D7D7;
+        }
+    }
+
+    &-infoPanel {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+        background: #ffffff;
+
+        &_group {
+            padding: 10px 60px 10px 60px;
+        }
+
+        &_heroImage {
+            position: relative;
+            margin-bottom: 20px;
+            
+            img{
+                width:100%;
+                height:100%;
+                max-height:275px;
+                object-fit: cover;
+            }
+
+            h2 {
+                position: absolute;
+                bottom: 1rem;
+                left: 4.5rem;
+                color: #fff;
+                font-weight: 700;
+                font-size: 21px;
+background: rgba(0,0,0,.5);
+padding:8px 15px;
+border-radius:2px;
+            }
+        }
+    }
+
+    &-wrapper {}
+
+    &-card {
+        background: #fff;
+        border: 1px solid #E3E3E3;
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0px 10px 0;
+        align-items: center;
+        gap: 25px;
+
+        &:hover {
+            filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
+        }
+
+        img {
+            width: 150px;
+            min-width: 125px;
+        }
+
+        &_content {}
+    }
+
+    &-cols {
+        display: grid;
+
+        &_3home {
+            grid-template-columns: 30rem auto 45rem;
+
+            @media all and (max-width: 1000px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &_interior {
+            grid-template-columns: 30rem auto;
+        }
+    }
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #424242;
+}
+
+/*alot of these styles are useless and only for prism*/
+.accordion-n {
+    padding: 0 0 0 0rem;
+    display: block;
+    margin: 0 0 1rem 0;
+}
+
+.accordion-n dt {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+
+.accordion-n dt a::before,
+.accordion-n dt a::after {
+    content: '';
+    position: absolute;
+    left: .5rem;
+    top: calc(50% - .5rem);
+    height: 1rem;
+    width: 4px;
+    background: var(--green);
+    transition: all .25s ease;
+    border-radius: 2px;
+}
+
+.accordion-n dt a::after {
+    transform: rotate(90deg);
+}
+
+.accordion-n dt a:hover::after {
+    background: var(--green);
+}
+
+.accordion-n dt.open a::before {
+    transform: rotate(45deg);
+}
+
+.accordion-n dt.open a::after {
+    transform: rotate(140deg);
+}
+
+.accordion-n dt a {
+    display: block;
+    color: initial;
+    text-decoration: none;
+    padding: 0rem 0rem 0rem 2rem;
+    position: relative;
+    margin: 0;
+}
+
+.accordion-n dd {
+    border-top: 0;
+    padding: 1rem 1rem 1rem 2rem;
+    margin: 0;
+}
+
+.accordion-n dd p {
+    margin: 0;
+}

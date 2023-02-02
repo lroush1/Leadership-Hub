@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>    <title>Resources & Tools | KW Leadership Hub</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" integrity="sha512-QDsjSX1mStBIAnNXx31dyvw4wVdHjonOwrkaIhpiIlzqGUCdsI62MwQtHpJF+Npy2SmSlGSROoNWQCOFpqbsOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="kw-wrapper" class="kw-cols kw-cols_interior">
+        <!-- <div class="kw-mobile_nav">
+            <div class="kw-profile">
+                <img src="https://i.pravatar.cc/60" alt="Profile Photo">
+                <div class="kw-profile_introduction">
+                    <h4>Welcome,</h4>
+                    <h2>Nina Royals</h2>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">
+                    Resources & Tools
+                </li>
+                <li>
+                    <a href="">Culture</a>
+                </li>
+                <li>
+                    <a href="">Coaching</a>
+                </li>
+                <li>
+                    <a href="">Training</a>
+                </li>
+                <li>
+                    <a href="">Technology</a>
+                </li>
+                <li>
+                    <a href="">Communities</a>
+                </li>
+                <li>
+                    <a href="">Growth</a>
+                </li>
+                <li>
+                    <a href="">Thrive '25</a>
+                </li>
+                <li>
+                    <a href="">MCA's</a>
+                </li>
+            </ul>
+        </div> -->
+        <section id="kw-sidebar" class="kw-sidebar">
+            <div class="kw-profile">
+                <img src="" alt="Profile Photo">
+                <div class="kw-profile_introduction">
+                    <h4>Welcome,</h4>
+                    <h2>Nina Royals</h2>
+                </div>
+            </div>
+            <nav id="kw-nav" class="kw-nav">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="active">
+                        Resources & Tools
+                    </li>
+                    <li>
+                        <a href="">Culture</a>
+                    </li>
+                    <li>
+                        <a href="">Coaching</a>
+                    </li>
+                    <li>
+                        <a href="">Training</a>
+                    </li>
+                    <li>
+                        <a href="">Technology</a>
+                    </li>
+                    <li>
+                        <a href="">Communities</a>
+                    </li>
+                    <li>
+                        <a href="">Growth</a>
+                    </li>
+                    <li>
+                        <a href="">Thrive '25</a>
+                    </li>
+                    <li>
+                        <a href="">MCA's</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section id="kw-interiorBody" class="kw-interiorBody">
+        <div class="kw-interiorBody_nav">
+            <h1>Resources & Tools</h1>
+            <div class="kw-card_carousel_nav slider" id="kw-card_carousel_nav">
+            </div>
+        </div>
+        <div class="kw-infoPanel kw-infoPanel_slider slider" id="kw-infoPanel_slider">
+            
+        </div>
+        </section>
+    </div><script>
+           // Fetch function to query the GraphQL endpoint
+           async function fetchData() {
+             const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
+             const query = `
+    query ResourcesAndTools {
+      posts(where: {categoryName: "Resources & Tools"}) {
+        edges {
+          node {
+            title
+            content
+            faq {
+                faqAnswer
+                faqTitle
+            }
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
+          }
+        }
+      }
+    }
+               `;
+             const res = await fetch(endpoint, {
+                 method: "POST",
+                 headers: { "Content-Type": "application/json" },
+                 body: JSON.stringify({ query }),
+               });
+               const json = await res.json();
+               return Object.values(json.data.posts.edges);
+           }
+           
+           // Insert the retrieved data into the HTML file
+           async function insertData() {
+             const data = await fetchData();
+             const dataContainer = document.getElementById("kw-card_carousel_nav");
+             let html = '';
+             data.forEach(edge => {
+               html += `
+                  <div class="kw-card">
+                      <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
+                      <div class="kw-card_content">
+                          <h3>${edge.node.title}</h3>
+                      </div>
+                  </div>
+               `;
+             });
+             dataContainer.innerHTML = html;
+           }
+           async function insertData2() {
+                const data = await fetchData();
+                const dataContainer = document.getElementById("kw-infoPanel_slider");
+                let html = '';
+                data.forEach(edge => {
+                  html += `
+                    <div class="kw-infoPanel_wrapper">
+                         <div class="kw-infoPanel_heroImage">
+                             <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
+                             <h2>${edge.node.title}</h2>
+                         </div>
+                         <div class="kw-infoPanel_content kw-infoPanel_group">
+                             ${edge.node.content}
+                         </div>
+                         <div class="kw-infoPanel_content kw-infoPanel_group">
+                              <h3>${edge.node.faq.faqTitle}</h3>
+                              <p>${edge.node.faq.faqAnswer}</p>
+                          </div>
+                     </div>
+                  `;
+                });
+                dataContainer.innerHTML = html;
+              }
+           
+           // Call the insertData function when the page loads
+           insertData();
+           insertData2();
+         </script>
+</body>
+</html>

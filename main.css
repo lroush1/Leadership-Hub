@@ -1,0 +1,342 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.kw-btn {
+  padding: 5px 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+}
+.kw-btn_group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.kw-btn_primary {
+  background: #CE011F;
+  border-radius: 1px;
+  color: #fff;
+}
+.kw-btn_secondary {
+  border: 1px solid #ADADAD;
+  color: #ADADAD;
+  border-radius: 1px;
+}
+.kw-sidebar {
+  background-color: #f5f5f5;
+  padding: 4rem 0px 4rem 0px;
+}
+@media all and (max-width: 1000px) {
+  .kw-sidebar {
+    display: none;
+  }
+}
+.kw-sidebar .kw-nav {
+  width: 100%;
+  margin: 5rem 0 0 0;
+}
+.kw-sidebar .kw-nav ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav li:not(.active) {
+  list-style: none;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 10px 0 10px 20px;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav li:not(.active) a {
+  text-decoration: none;
+  color: #000000;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav li:not(.active):hover {
+  font-weight: 500;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav .active {
+  background: rgba(206, 1, 32, 0.0352941176);
+  font-style: normal;
+  font-weight: 700;
+  list-style: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ce011f;
+  position: relative;
+  padding: 12px 0 12px 20px;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav .active a {
+  text-decoration: none;
+  color: #ce011f;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-nav .active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: red;
+  transition: 0.3s;
+}
+.kw-sidebar .kw-profile {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 60px auto;
+  align-items: center;
+  margin: 0 2rem;
+}
+.kw-sidebar .kw-profile img {
+  border-radius: 50rem;
+}
+.kw-sidebar .kw-profile h4 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #363636;
+}
+.kw-sidebar .kw-profile h2 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 25px;
+  color: #363636;
+}
+.kw-mainBody_cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+}
+.kw-mainBody_content {
+  padding: 30px 50px;
+}
+.kw-mainBody_hero {
+  background-color: #000000;
+  padding: 3.5rem 5.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+}
+.kw-mainBody_hero_heroContent p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+}
+.kw-mainBody_hero_heroContent a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  color: #ffffff;
+}
+.kw-interiorBody {
+  background: #E0E0E0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  grid-gap: 0px;
+}
+.kw-interiorBody_nav {
+  padding: 50px 50px 0 50px;
+}
+.kw-announcements {
+  padding: 4.5rem 5rem;
+  background-color: #f9f9f9;
+}
+@media all and (max-width: 1000px) {
+  .kw-announcements {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.kw-announcements h3 {
+  font-weight: 400;
+}
+.kw-announcements a {
+  color: #CE011F;
+}
+.kw-announcements a:hover {
+  font-weight: bold;
+}
+.kw-announcements_group {
+  border-bottom: 1px solid #D7D7D7;
+}
+.kw-infoPanel {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+.kw-infoPanel_group {
+  padding: 10px 60px 10px 60px;
+}
+.kw-infoPanel_heroImage {
+  position: relative;
+  margin-bottom: 20px;
+}
+.kw-infoPanel_heroImage img {
+  width: 100%;
+  height: 100%;
+  max-height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.kw-infoPanel_heroImage h2 {
+  position: absolute;
+  bottom: 1rem;
+  left: 4.5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 21px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 15px;
+  border-radius: 2px;
+}
+.kw-card {
+  background: #fff;
+  border: 1px solid #E3E3E3;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 10px 0;
+  align-items: center;
+  gap: 25px;
+}
+.kw-card:hover {
+  -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.15));
+}
+.kw-card img {
+  width: 150px;
+  min-width: 125px;
+}
+.kw-cols {
+  display: grid;
+}
+.kw-cols_3home {
+  grid-template-columns: 30rem auto 45rem;
+}
+@media all and (max-width: 1000px) {
+  .kw-cols_3home {
+    grid-template-columns: 1fr;
+  }
+}
+.kw-cols_interior {
+  grid-template-columns: 30rem auto;
+}
+
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 25px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #424242;
+}
+
+/*alot of these styles are useless and only for prism*/
+.accordion-n {
+  padding: 0 0 0 0rem;
+  display: block;
+  margin: 0 0 1rem 0;
+}
+
+.accordion-n dt {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.accordion-n dt a::before,
+.accordion-n dt a::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: calc(50% - 0.5rem);
+  height: 1rem;
+  width: 4px;
+  background: var(--green);
+  transition: all 0.25s ease;
+  border-radius: 2px;
+}
+
+.accordion-n dt a::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.accordion-n dt a:hover::after {
+  background: var(--green);
+}
+
+.accordion-n dt.open a::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.accordion-n dt.open a::after {
+  -webkit-transform: rotate(140deg);
+          transform: rotate(140deg);
+}
+
+.accordion-n dt a {
+  display: block;
+  color: initial;
+  text-decoration: none;
+  padding: 0rem 0rem 0rem 2rem;
+  position: relative;
+  margin: 0;
+}
+
+.accordion-n dd {
+  border-top: 0;
+  padding: 1rem 1rem 1rem 2rem;
+  margin: 0;
+}
+
+.accordion-n dd p {
+  margin: 0;
+}

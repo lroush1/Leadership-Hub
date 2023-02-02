@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>KW Leadership Hub</title>
+   <link rel="stylesheet" href="/main.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+   <script src="/main.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+
+<body>
+   <div id="kw-wrapper" class="kw-cols kw-cols_3home">
+      <section id="kw-sidebar" class="kw-sidebar">
+         <div class="kw-profile">
+            <img src="https://via.placeholder.com/60" alt="Profile Photo">
+            <div class="kw-profile_introduction">
+               <h4>Welcome,</h4>
+               <h2>Nina Royals</h2>
+            </div>
+         </div>
+         <nav id="kw-nav" class="kw-nav">
+            <ul>
+               <li class="active">
+                  Home
+               </li>
+               <li>
+                  <a href="/resourcesandtools">Resources & Tools</a>
+               </li>
+               <li>
+                  <a href="">Culture</a>
+               </li>
+               <li>
+                  <a href="">Coaching</a>
+               </li>
+               <li>
+                  <a href="">Training</a>
+               </li>
+               <li>
+                  <a href="">Technology</a>
+               </li>
+               <li>
+                  <a href="">Communities</a>
+               </li>
+               <li>
+                  <a href="">Growth</a>
+               </li>
+               <li>
+                  <a href="">Thrive '25</a>
+               </li>
+               <li>
+                  <a href="">MCA's</a>
+               </li>
+            </ul>
+         </nav>
+      </section>
+      <section id="kw-mainBody" class="kw-mainBody">
+         <div class="kw-mainBody_hero">
+            <img alt="logo" width="450" src="https://marcomplaygrnd.wpengine.com/wp-content/uploads/2023/01/growthCall_logo.png">
+            <div class="kw-mainBody_hero_heroContent">
+               <p>Join Marc King, Jason Abrams and your fellow leaders every Monday at 11 AM (CT) for a deep dive into the strategies, tactics, and tools you need to run a next-level business.</p>
+               <p class="kw-btn_group">
+                  <a class="kw-btn kw-btn_primary">Join the Call</a>
+                  <a class="kw-btn kw-btn_secondary">Call Recordings</a>
+               </p>
+            </div>
+         </div>
+         <div class="kw-mainBody_content">
+            <h2>Featured Resources</h2>
+            <div class="kw-carousel" id="kw-carousel">
+              
+            </div>
+
+            <h2>Upcoming Training</h2>
+            <div class="kw-mainBody_cardGrid">
+               <div class="kw-card">
+                  <img alt="logo" src="https://via.placeholder.com/44px">
+                  <div>
+                     <h3>Title</h3>
+                     <p>Date and Time</p>
+                  </div>
+               </div>
+               <div class="kw-card">
+                  <img alt="logo" src="https://via.placeholder.com/44px">
+                  <div>
+                     <h3>Title</h3>
+                     <p>Date and Time</p>
+                  </div>
+               </div>
+               <div class="kw-card">
+                  <img alt="logo" src="https://via.placeholder.com/44px">
+                  <div>
+                     <h3>Title</h3>
+                     <p>Date and Time</p>
+                  </div>
+               </div>
+               <div class="kw-card">
+                  <img alt="logo" src="https://via.placeholder.com/44px">
+                  <div>
+                     <h3>Title</h3>
+                     <p>Date and Time</p>
+                  </div>
+               </div>
+               <div class="kw-card">
+                  <img alt="logo" src="https://via.placeholder.com/44px">
+                  <div>
+                     <h3>Title</h3>
+                     <p>Date and Time</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="kw-announcements" class="kw-announcements">
+         <h1>Announcements</h1>
+         <div id="lh-announcements">
+         </div>
+      </section>
+   </div>
+    <script>
+      // Fetch function to query the GraphQL endpoint
+      async function fetchData() {
+        const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
+        const query = `
+            query Announcements {
+              posts(where: {categoryName: "Announcement"}) {
+                edges {
+                  node {
+                    title
+                    content
+                  }
+                }
+              }
+            }          `;
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query }),
+        });
+        const json = await res.json();
+        return json.data;
+      }
+      
+      // Insert the retrieved data into the HTML file
+      async function insertData() {
+          const data = await fetchData();
+          const dataContainer = document.getElementById("lh-announcements");
+          let html = '';
+          const edges = Object.values(data.posts.edges);
+          edges.forEach(edge => {
+            html += `
+            <div class="kw-announcements_group">
+              <h3>${edge.node.title}</h3>
+              <div>${edge.node.content}</div>
+              </div>
+            `;
+          });
+          dataContainer.innerHTML = html;
+        }
+      
+      // Call the insertData function when the page loads
+      insertData();
+    </script><script>
+       // Fetch function to query the GraphQL endpoint
+       async function fetchData() {
+         const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
+         const query = `
+query HomeFeaturedCarousel {
+           posts(where: {categoryName: "Home Featured Carousel"}) {
+             edges {
+               node {
+                 title
+                 tags {
+                   edges {
+                     node {
+                       name
+                     }
+                   }
+                 }
+                 featuredImage {
+                   node {
+                     mediaItemUrl
+                   }
+                 }
+               }
+             }
+           }
+         }
+           `;
+         const res = await fetch(endpoint, {
+             method: "POST",
+             headers: { "Content-Type": "application/json" },
+             body: JSON.stringify({ query }),
+           });
+           const json = await res.json();
+           return Object.values(json.data.posts.edges);
+       }
+       
+       // Insert the retrieved data into the HTML file
+       async function insertData() {
+         const data = await fetchData();
+         const dataContainer = document.getElementById("kw-carousel");
+         let html = '';
+         data.forEach(edge => {
+            const tags = Object.values(edge.node.tags.edges);
+            tags.forEach(tag => {
+               html += `<a href="${tag.node.name}" class="kw-card">`;
+             });
+           html += `
+              <img alt="logo" src="${edge.node.featuredImage.node.mediaItemUrl}">
+                 <h3>${edge.node.title}</h3>
+           </a>
+           `;
+         });
+         dataContainer.innerHTML = html;
+       }
+       
+       // Call the insertData function when the page loads
+       insertData();
+     </script>
+  </body>
+</html>
