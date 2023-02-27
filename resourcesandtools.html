@@ -1,122 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>    <title>Resources & Tools | KW Leadership Hub</title>
+<head>
+    <title>Resources & Tools | KW Leadership Hub</title>
     <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js" integrity="sha512-QDsjSX1mStBIAnNXx31dyvw4wVdHjonOwrkaIhpiIlzqGUCdsI62MwQtHpJF+Npy2SmSlGSROoNWQCOFpqbsOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="/overrides.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        const types = ['load', 'resize'];
+
+        types.forEach(function(type) {
+            window.addEventListener(type, () => {
+
+                let elem = document.getElementById('kw-wrapper');
+                let wh = window.innerHeight;
+
+                elem.style.height = wh + 'px';
+
+            });
+        });
+    </script>
+   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 </head>
 
 <body>
     <div id="kw-wrapper" class="kw-cols kw-cols_interior">
-        <!-- <div class="kw-mobile_nav">
-            <div class="kw-profile">
-                <img src="https://i.pravatar.cc/60" alt="Profile Photo">
-                <div class="kw-profile_introduction">
-                    <h4>Welcome,</h4>
-                    <h2>Nina Royals</h2>
-                </div>
-            </div>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li class="active">
-                    Resources & Tools
-                </li>
-                <li>
-                    <a href="">Culture</a>
-                </li>
-                <li>
-                    <a href="">Coaching</a>
-                </li>
-                <li>
-                    <a href="">Training</a>
-                </li>
-                <li>
-                    <a href="">Technology</a>
-                </li>
-                <li>
-                    <a href="">Communities</a>
-                </li>
-                <li>
-                    <a href="">Growth</a>
-                </li>
-                <li>
-                    <a href="">Thrive '25</a>
-                </li>
-                <li>
-                    <a href="">MCA's</a>
-                </li>
-            </ul>
-        </div> -->
+        
         <section id="kw-sidebar" class="kw-sidebar">
+          <div class="kw-mobileNav_header">
+            <h1>Leadership Hub</h1>
+            
+            <svg id="kw-navToggle" class="kw-mobileNav_hamburger" width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0.728256C0.585786 0.728256 0.25 1.06404 0.25 1.47826C0.25 1.89247 0.585786 2.22826 1 2.22826V0.728256ZM17 2.22826C17.4142 2.22826 17.75 1.89247 17.75 1.47826C17.75 1.06404 17.4142 0.728256 17 0.728256V2.22826ZM1 5.75C0.585786 5.75 0.25 6.08578 0.25 6.5C0.25 6.91421 0.585786 7.25 1 7.25V5.75ZM17 7.25C17.4142 7.25 17.75 6.91421 17.75 6.5C17.75 6.08578 17.4142 5.75 17 5.75V7.25ZM1 10.7717C0.585786 10.7717 0.25 11.1075 0.25 11.5217C0.25 11.9359 0.585786 12.2717 1 12.2717V10.7717ZM17 12.2717C17.4142 12.2717 17.75 11.9359 17.75 11.5217C17.75 11.1075 17.4142 10.7717 17 10.7717V12.2717ZM1 2.22826H17V0.728256H1V2.22826ZM1 7.25H17V5.75H1V7.25ZM1 12.2717H17V10.7717H1V12.2717Z" fill="#9CA3AF"/>
+            </svg>
+        
+          </div>
+          <div class="kw-nav_content_wrapper" id="kw-mobileNav">
             <div class="kw-profile">
-                <img src="" alt="Profile Photo">
+              <div class="kw-profile_wrapper">
+                <img src="https://via.placeholder.com/60" alt="Profile Photo">
                 <div class="kw-profile_introduction">
-                    <h4>Welcome,</h4>
-                    <h2>Nina Royals</h2>
+                  <h4>Welcome,</h4>
+                  <h2>Nina Royals</h2>
                 </div>
+              </div>
             </div>
             <nav id="kw-nav" class="kw-nav">
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li class="active">
-                        Resources & Tools
-                    </li>
-                    <li>
-                        <a href="">Culture</a>
-                    </li>
-                    <li>
-                        <a href="">Coaching</a>
-                    </li>
-                    <li>
-                        <a href="">Training</a>
-                    </li>
-                    <li>
-                        <a href="">Technology</a>
-                    </li>
-                    <li>
-                        <a href="">Communities</a>
-                    </li>
-                    <li>
-                        <a href="">Growth</a>
-                    </li>
-                    <li>
-                        <a href="">Thrive '25</a>
-                    </li>
-                    <li>
-                        <a href="">MCA's</a>
-                    </li>
-                </ul>
+              <ul>
+                <li class="active">
+                  Home
+                </li>
+                <li>
+                  <a href="/resourcesandtools">Resources & Tools</a>
+                </li>
+                <li>
+                  <a href="">Culture</a>
+                </li>
+                <li>
+                  <a href="">Coaching</a>
+                </li>
+                <li>
+                  <a href="">Training</a>
+                </li>
+                <li>
+                  <a href="">Technology</a>
+                </li>
+                <li>
+                  <a href="">Communities</a>
+                </li>
+                <li>
+                  <a href="">Growth</a>
+                </li>
+                <li>
+                  <a href="">Thrive '25</a>
+                </li>
+                <li>
+                  <a href="">MCA's</a>
+                </li>
+              </ul>
             </nav>
+          </div>
         </section>
-        <section id="kw-interiorBody" class="kw-interiorBody">
-        <div class="kw-interiorBody_nav">
-            <h1>Resources & Tools</h1>
-            <div class="kw-card_carousel_nav slider" id="kw-card_carousel_nav">
-            </div>
-        </div>
-        <div class="kw-infoPanel kw-infoPanel_slider slider" id="kw-infoPanel_slider">
-            
-        </div>
+        <section>
+           <div class="tab-switcher" id="kw-panel-switcher">
+              <div class="tab-nav-wrapper">
+                 <h1>Resources & Tools</h1>
+                 <div class="kw-panel-nav panels fade" id="kw-panel-nav"></div>
+              </div>
+              <div class="kw-panes panes fade" id="kw-panes">
+              </div>
+           </div>
         </section>
-    </div><script>
-           // Fetch function to query the GraphQL endpoint
-           async function fetchData() {
-             const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
-             const query = `
+    </div>
+  
+    <script>
+        // Fetch function to query the GraphQL endpoint
+        async function fetchData() {
+           const endpoint = "https://marcomplaygrnd.wpengine.com/graphql";
+           const query = `
                     query ResourcesAndTools {
                       posts(where: {categoryName: "Resources & Tools"}) {
                         edges {
                           node {
                             title
                             content
+                            postId
                             faq {
                                 faqAnswer
                                 faqTitle
@@ -131,59 +120,84 @@
                       }
                     }
                `;
-             const res = await fetch(endpoint, {
-                 method: "POST",
-                 headers: { "Content-Type": "application/json" },
-                 body: JSON.stringify({ query }),
-               });
-               const json = await res.json();
-               return Object.values(json.data.posts.edges);
-           }
-           
-           // Insert the retrieved data into the HTML file
-           async function insertData() {
-             const data = await fetchData();
-             const dataContainer = document.getElementById("kw-card_carousel_nav");
-             let html = '';
-             data.forEach(edge => {
-               html += `
-                  <div class="kw-card">
-                      <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
-                      <div class="kw-card_content">
-                          <h3>${edge.node.title}</h3>
-                      </div>
+           const res = await fetch(endpoint, {
+              method: "POST",
+              headers: {
+                 "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                 query
+              }),
+           });
+           const json = await res.json();
+           return Object.values(json.data.posts.edges);
+        }
+
+        // Insert the retrieved data into the HTML file
+        async function insertData() {
+           const data = await fetchData();
+           const dataContainer = document.getElementById("kw-panel-nav");
+           let html = '';
+           data.forEach(edge => {
+              html += `
+                <a id="kw-card-tab" class="toggle-card kw-card" href="#" data-target="pane-${edge.node.postId}">
+                <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
+                <div class="kw-card_content">
+                    <h3>${edge.node.title}</h3>
                   </div>
+                </a>
                `;
-             });
-             dataContainer.innerHTML = html;
-           }
-           async function insertData2() {
-                const data = await fetchData();
-                const dataContainer = document.getElementById("kw-infoPanel_slider");
-                let html = '';
-                data.forEach(edge => {
-                  html += `
-                    <div class="kw-infoPanel_wrapper">
-                         <div class="kw-infoPanel_heroImage">
-                             <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
-                             <h2>${edge.node.title}</h2>
-                         </div>
-                         <div class="kw-infoPanel_content kw-infoPanel_group">
-                             ${edge.node.content}
-                         </div>
-                         <div class="kw-infoPanel_content kw-infoPanel_group">
-                              <h3>${edge.node.faq.faqTitle}</h3>
-                              <p>${edge.node.faq.faqAnswer}</p>
-                          </div>
-                     </div>
+           });
+           dataContainer.innerHTML = html;
+        }
+        async function insertData2() {
+           const data = await fetchData();
+           const dataContainer = document.getElementById("kw-panes");
+           let html = '';
+           data.forEach(edge => {
+              html += `
+                <div id="pane-${edge.node.postId}" class="interior-content">
+                <div class="kw-infoPanel_wrapper">
+                    <div class="kw-infoPanel_heroImage">
+                      <img src="${edge.node.featuredImage.node.mediaItemUrl}" alt="cover photo">
+                      <h2>${edge.node.title}</h2>
+                    </div>
+                    <div class="kw-infoPanel_content kw-infoPanel_group">
+                      ${edge.node.content}
+                    </div>
+                    
+                  </div>
+                </div>
+                 
                   `;
-                });
-                dataContainer.innerHTML = html;
-              }
-           
-           // Call the insertData function when the page loads
-           insertData();
-           insertData2();
-         </script>
+           });
+           dataContainer.innerHTML = html;
+        }
+
+        // Call the insertData function when the page loads
+        insertData();
+        insertData2();
+
+        async function delay() {
+           await new Promise(resolve => setTimeout(resolve, 1000));
+           $(".fade .interior-content").hide().first().show();
+
+           $(".fade .toggle-card").click(function() {
+              var target = $(this).attr("data-target");
+
+              $(".fade .interior-content").hide();
+              $("#" + target).fadeIn(0);
+
+              $(".fade .toggle-card").removeClass("active");
+              $(this).addClass("active");
+           });
+
+           console.log("Delayed message");
+        }
+
+        delay();
+    </script>
+
 </body>
+
 </html>

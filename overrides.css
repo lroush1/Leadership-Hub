@@ -1,0 +1,122 @@
+h1 {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  text-align: unset !important;
+  color: #000000 !important;
+  border-bottom: none !important;
+  background-color: unset !important;
+}
+
+h2 {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #000000 !important;
+  text-align: unset !important;
+  border-bottom: none !important;
+  background-color: unset !important;
+  margin: unset !important;
+  padding: unset !important;
+}
+
+h3 {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #000000 !important;
+}
+
+p {
+  margin: unset !important;
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #424242 !important;
+}
+
+.kw-sidebar .kw-nav .active {
+  background: rgba(206, 1, 32, 0.0352941176) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  list-style: none !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #ce011f !important;
+  position: relative !important;
+  padding: 12px 0 12px 20px !important;
+  transition: 0.3s !important;
+}
+
+.kw-sidebar .kw-nav li:not(.active) {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  color: #000000 !important;
+  list-style: none !important;
+  width: 100% !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+  padding: 10px 0 10px 20px !important;
+  transition: 0.3s !important;
+}
+
+.kw-sidebar .kw-nav ul {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: 0.3s !important;
+}
+
+.kw-sidebar .kw-profile h4 {
+  margin: 0 !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #363636 !important;
+}
+
+.kw-sidebar .kw-profile h2 {
+  margin: 0 !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 21px !important;
+  line-height: 25px !important;
+  color: #363636 !important;
+  border: none !important;
+}
+
+.kw-infoPanel_heroImage h2 {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 21px !important;
+  line-height: 25px !important;
+  color: #fff !important;
+  text-align: unset !important;
+  border-bottom: none !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding: 8px 15px !important;
+  border-radius: 2px !important;
+  position: absolute !important;
+  bottom: 2rem !important;
+  left: 4.5rem;
+  margin: unset !important;
+}
+@media all and (max-width: 1000px) {
+  .kw-infoPanel_heroImage h2 {
+    left: 0.5rem !important;
+  }
+}
